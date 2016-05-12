@@ -1,8 +1,7 @@
 module Fleet
   class Client
     module Unit
-
-      UNITS_RESOURCE = 'units'
+      UNITS_RESOURCE = 'units'.freeze
 
       def list_units
         get(units_path)
@@ -29,7 +28,6 @@ module Fleet
       def units_path(*parts)
         resource_path(UNITS_RESOURCE, *parts)
       end
-
     end
   end
 end

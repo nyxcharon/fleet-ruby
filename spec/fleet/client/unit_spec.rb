@@ -1,20 +1,18 @@
 require 'spec_helper'
 
 describe Fleet::Client::Unit do
-
   subject { Fleet::Client.new }
 
   let(:response) { double(:response) }
 
   describe '#list_units' do
-
     before do
       allow(subject).to receive(:get).and_return(response)
     end
 
     it 'GETs all Fleet units' do
       expect(subject).to receive(:get)
-        .with("fleet/v1/units")
+        .with('fleet/v1/units')
         .and_return(response)
 
       subject.list_units
@@ -26,7 +24,6 @@ describe Fleet::Client::Unit do
   end
 
   describe '#get_unit' do
-
     let(:name) { 'foo.service' }
 
     before do
@@ -47,7 +44,6 @@ describe Fleet::Client::Unit do
   end
 
   describe '#create_unit' do
-
     let(:name) { 'foo.service' }
     let(:options) { { exec_start: '/bin/bash' } }
 
@@ -69,7 +65,6 @@ describe Fleet::Client::Unit do
   end
 
   describe '#delete_unit' do
-
     let(:name) { 'foo.service' }
 
     before do

@@ -1,20 +1,18 @@
 require 'spec_helper'
 
 describe Fleet::Client::State do
-
   subject { Fleet::Client.new }
 
   let(:response) { double(:response) }
 
   describe '#list_states' do
-
     before do
       allow(subject).to receive(:get).and_return(response)
     end
 
     it 'GETs the state resource' do
       expect(subject).to receive(:get)
-        .with('fleet/v1/state', {})
+        .with('fleet/v1/state')
         .and_return(response)
 
       subject.list_states

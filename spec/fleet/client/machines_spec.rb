@@ -1,13 +1,11 @@
 require 'spec_helper'
 
 describe Fleet::Client::Machines do
-
   subject { Fleet::Client.new }
 
   let(:response) { double(:response) }
 
   describe '#list_machines' do
-
     before do
       allow(subject).to receive(:get).and_return(response)
     end

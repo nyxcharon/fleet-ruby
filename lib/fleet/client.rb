@@ -44,8 +44,15 @@ module Fleet
       end
     end
 
-    def submit(name, service_def)
+    def list_unit_states
+      list_states['states'] || []
+    end
 
+    def list_fleet_machines
+      list_machines['machines'] || []
+    end
+
+    def submit(name, service_def)
       unless name =~ /\A[a-zA-Z0-9:_.@-]+\Z/
         raise ArgumentError, 'name may only contain [a-zA-Z0-9:_.@-]'
       end
