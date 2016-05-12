@@ -4,7 +4,7 @@ module Fleet
 
       UNITS_RESOURCE = 'units'
 
-      def list_units()
+      def list_units
         get(units_path)
       end
 
